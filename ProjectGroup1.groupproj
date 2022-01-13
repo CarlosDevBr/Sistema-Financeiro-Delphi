@@ -1,0 +1,39 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{74C92A23-BFAC-4BFB-A381-8B6698C7C9D6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Sistema_Financas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\User\Downloads\Arquivos Delphi\Arquivos\Sistema\Sistema_Financas.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Sistema_Financas">
+        <MSBuild Projects="C:\Users\User\Downloads\Arquivos Delphi\Arquivos\Sistema\Sistema_Financas.dproj"/>
+    </Target>
+    <Target Name="Sistema_Financas:Clean">
+        <MSBuild Projects="C:\Users\User\Downloads\Arquivos Delphi\Arquivos\Sistema\Sistema_Financas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Sistema_Financas:Make">
+        <MSBuild Projects="C:\Users\User\Downloads\Arquivos Delphi\Arquivos\Sistema\Sistema_Financas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Sistema_Financas;Sistema_Financas"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Sistema_Financas:Clean;Sistema_Financas:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Sistema_Financas:Make;Sistema_Financas:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
